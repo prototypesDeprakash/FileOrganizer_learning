@@ -1,0 +1,13 @@
+ask user for directory
+user enters the directory
+scans all files in that directory
+if its a folder then ignore it
+
+categorize file by its type
+
+separate list for storing names of each file in different type
+
+create folders for each type of file ex : image(png , jpg , jpeg) , 
+pdf 
+
+move respective file types to respective folders 
