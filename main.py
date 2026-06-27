@@ -73,18 +73,13 @@ class FileOrganizer:
                 else:
                     self.Folders.append(current_file)
                     
-            
-
-
-        
 
     def create_Folders(self):
-        #custom folder naming:
-        '''
-        pdf fies = PDF_Files
-        
-        '''
-        pass
+        #creating folders based on the Folder_naming list
+
+        for folderName in self.FolderNaming:
+            if(folderName not in self.allFiles):
+                os.mkdir(folderName)
 
     def move_FilesToFolders(self):
         pass
