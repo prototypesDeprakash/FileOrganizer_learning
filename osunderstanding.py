@@ -8,3 +8,8 @@ import os
 
 testname = "hellow.unitypackage"
 print(testname[-12::])
+
+
+ext , name = "pdf_Folder".split("_")
+print(ext)
+print(name)
