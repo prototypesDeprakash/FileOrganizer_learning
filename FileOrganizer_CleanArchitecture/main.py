@@ -1,5 +1,6 @@
-from organizer import FileOrganizer
+from ui import start_ui
 
-organizer  = FileOrganizer()
-organizer.run()
+start_ui()
+
+#organizer.run()
 

@@ -1,21 +1,22 @@
 def create_summary(category_dictionary, created_folders):
+    finalresult=[]
     total_items = 0
 
-    print("\n" + "=" * 60)
-    print("                 FILE ORGANIZER SUMMARY")
-    print("=" * 60)
+    finalresult.append("\n" + "=" * 60)
+    finalresult.append("                 FILE ORGANIZER SUMMARY")
+    finalresult.append("=" * 60)
 
-    print("\nFolders Created")
-    print("-" * 60)
+    finalresult.append("\nFolders Created")
+    finalresult.append("-" * 60)
 
     if created_folders:
         for folder in created_folders:
-            print(folder)
+            finalresult.append(folder)
     else:
-        print("No new folders created.")
+        finalresult.append("No new folders created.")
 
-    print("\nFiles Moved")
-    print("-" * 60)
+    finalresult.append("\nFiles Moved")
+    finalresult.append("-" * 60)
 
     for key in category_dictionary:
 
@@ -24,17 +25,19 @@ def create_summary(category_dictionary, created_folders):
         else:
             folder_name = key.capitalize() + "_Files"
 
-        print(f"\n{folder_name}")
-        print("-" * len(folder_name))
+        finalresult.append(f"\n{folder_name}")
+        finalresult.append("-" * len(folder_name))
 
         for file in category_dictionary[key]:
-            print(f"  {file}")
+            finalresult.append(f"  {file}")
 
-        print(f"\nItems moved : {len(category_dictionary[key])}")
+        finalresult.append(f"\nItems moved : {len(category_dictionary[key])}")
 
         total_items += len(category_dictionary[key])
 
-    print("\n" + "=" * 60)
-    print(f"Total Items Moved : {total_items}")
-    print(f"Folders Created   : {len(created_folders)}")
-    print("=" * 60)
+    finalresult.append("\n" + "=" * 60)
+    finalresult.append(f"Total Items Moved : {total_items}")
+    finalresult.append(f"Folders Created   : {len(created_folders)}")
+    finalresult.append("=" * 60)
+    print(finalresult)
+    return finalresult
