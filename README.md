@@ -104,15 +104,19 @@ TidyDir/
 
 <img width="800" height="628" alt="Main Window" src="https://github.com/user-attachments/assets/56d6f747-8cc0-4a59-90be-fe877fc58eef" />
 
-### Organization Summary
+### Before Organization 
 
 <img width="798" height="855" alt="Summary" src="https://github.com/user-attachments/assets/09a04f79-ed55-4b8b-badd-837d4dc8177c" />
 
 <img width="791" height="892" alt="Summary Details" src="https://github.com/user-attachments/assets/43442dfa-27e5-4e3a-8dcd-cb3832c0cdf2" />
 
+<img width="803" height="848" alt="Result" src="https://github.com/user-attachments/assets/bb0f75a6-73c1-4d06-8991-18617f8fb608" />
+
 ### Organized Folder
 
-<img width="803" height="848" alt="Result" src="https://github.com/user-attachments/assets/bb0f75a6-73c1-4d06-8991-18617f8fb608" />
+
+<img width="989" height="505" alt="image" src="https://github.com/user-attachments/assets/1dd8f9e8-abfb-4f8d-9926-2a60e0228032" />
+
 
 ---
 
