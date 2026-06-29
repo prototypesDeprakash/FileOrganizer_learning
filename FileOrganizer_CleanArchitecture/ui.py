@@ -1,169 +1,111 @@
-import customtkinter as ctk
+from customtkinter import *
 from tkinter import filedialog
+app =  CTk()
+app.geometry("800x600")
+app.title("FIlz")
+set_appearance_mode("System")
+app.resizable(width=True,height=True)
 
-ctk.set_appearance_mode("Dark")
+#theme Design
 
-GREEN = "#00ff66"
-BG = "#050505"
-FRAME = "#111111"
+BG = "#F8F7FF"
+FRAME = "#FFFFFF"
+CARD = "#FCFBFF"
+HEADER = "#FFFFFF"
 
-app = ctk.CTk()
-app.title("FILEZ v2.1")
-app.geometry("760x600")
+ACCENT = "#8B5CF6"
+
+TEXT = "#1F2937"
+SUBTEXT = "#6B7280"
+
+BUTTON = "#8B5CF6"
+BUTTON_HOVER = "#7C3AED"
+
+BORDER = "#E9D5FF"
 app.configure(fg_color=BG)
-app.resizable(False, False)
 
-# ============================
-# Title
-# ============================
+#layout design
+#frame1 = CTkFrame(master=app,fg_color=FRAME,height=50)
+frame1 = CTkFrame(app, fg_color=HEADER, border_color=ACCENT, border_width=1)
+frame1.pack(fill="x",padx=20, pady=10)
 
-title = ctk.CTkLabel(
-    app,
-    text="""==========================================
-        FILEZ v2.1 TERMINAL
-==========================================""",
-    font=("Consolas",18,"bold"),
-    text_color=GREEN,
-    justify="left"
+#frame2 = CTkFrame(master=app,fg_color=CARD,height=250)
+frame2 = CTkFrame(app, fg_color=FRAME, border_color=ACCENT)
+frame2.pack(fill="x",padx=20, pady=10)
+
+#frame3 = CTkFrame(master=app,fg_color=CARD,height=150)
+frame3 = CTkFrame(app, fg_color=FRAME, border_color=ACCENT)
+frame3.pack(fill="x")
+
+#frame4 = CTkFrame(master=app,fg_color=FRAME,height=200)
+frame4 = CTkFrame(app, fg_color=FRAME, border_color=ACCENT)
+frame4.pack(fill="both",expand=True)
+
+
+#title ->frame1
+title = CTkLabel(
+    frame1,
+    text="TidyDir v1.0.0",
+    font=("Consolas", 22, "bold"),
+    text_color=ACCENT
 )
-title.pack(anchor="w", padx=30, pady=(20,25))
+title.pack(expand=True)
 
+#fileBrowser ->frame2
 
-# ============================
-# Target Directory
-# ============================
-
-def browse_folder():
-    global selected_directory
-
-    folder = filedialog.askdirectory(
-        title="Select Target Directory"
-    )
-
-    if folder:
-        selected_directory = folder
-
-        directory.configure(state="normal")
-        directory.delete("1.0", "end")
-        directory.insert("1.0", f"> {folder}")
-        directory.configure(state="disabled")
-
-
-# ============================
-# Target Directory
-# ============================
-
-label = ctk.CTkLabel(
-    app,
-    text="TARGET DIRECTORY",
-    font=("Consolas", 16, "bold"),
-    text_color=GREEN
+# Heading
+heading = CTkLabel(
+    frame2,
+    text="Target Directory",
+    font=("Consolas", 18, "bold"),
+    text_color=ACCENT
 )
-label.pack(anchor="w", padx=30)
+heading.pack(anchor="center", pady=(10, 5))
 
-directory = ctk.CTkTextbox(
-    app,
-    height=35,
-    width=680,
-    fg_color=FRAME,
-    border_width=1,
-    border_color=GREEN,
-    text_color=GREEN,
-    font=("Consolas", 15)
-)
-directory.pack(padx=30, pady=(8, 18))
+# Entry + Button
+path_frame = CTkFrame(frame2, fg_color="transparent")
+path_frame.pack(fill="x")
 
-# Default text
-directory.insert("1.0", "> No directory selected")
-directory.configure(state="disabled")
-
-browse = ctk.CTkButton(
-    app,
-    text="[ BROWSE ]",
-    width=200,
-    height=38,
-    fg_color=FRAME,
-    hover_color="#1a1a1a",
-    border_width=1,
-    border_color=GREEN,
-    text_color=GREEN,
-    corner_radius=0,
-    font=("Consolas", 15, "bold"),
-    command=browse_folder
-)
-browse.pack(anchor="w", padx=30)
-# ============================
-# Divider
-# ============================
-
-divider1 = ctk.CTkLabel(
-    app,
-    text="",
-    font=("Consolas",16),
-    text_color=GREEN
-)
-divider1.pack(anchor="w", padx=15, pady=10)
-
-# ============================
-# Ready
-# ============================
-
-ready = ctk.CTkLabel(
-    app,
-    text="READY",
-    font=("Consolas",17,"bold"),
-    text_color=GREEN
-)
-ready.pack(anchor="w", padx=30)
-
-start = ctk.CTkButton(
-    app,
-    text="[ INITIALIZE ORGANIZATION ]",
-    width=330,
+directory_entry = CTkEntry(
+    path_frame,
+    placeholder_text="Select a folder...",
     height=40,
     fg_color=FRAME,
-    hover_color="#1a1a1a",
+    border_color=ACCENT,
     border_width=1,
-    border_color=GREEN,
-    text_color=GREEN,
-    corner_radius=0,
-    font=("Consolas",15,"bold")
+    text_color=ACCENT,
+    placeholder_text_color="#4D4D4D",
+    font=("Consolas", 14)
 )
-start.pack(anchor="w", padx=30, pady=(15,20))
 
 
-
-# ============================
-# Status
-# ============================
-
-status_label = ctk.CTkLabel(
-    app,
-    text="STATUS",
-    font=("Consolas",16,"bold"),
-    text_color=GREEN
+directory_entry.pack(side="left", fill="x", expand=True, padx=(0, 10))
+def browse_folder():
+    folder = filedialog.askdirectory()
+    if folder:
+        directory_entry.delete(0, END)
+        directory_entry.insert(0, folder)
+        
+browse_button = CTkButton(
+    path_frame,
+    text="BROWSE",
+    command=browse_folder,
+    width=120,
+    fg_color=ACCENT,
+    hover_color=BUTTON_HOVER,
+    text_color="#000000",    # Black text
+    font=("Consolas", 14, "bold")
 )
-status_label.pack(anchor="w", padx=30, pady=(18,10))
+browse_button.pack(side="right")
 
-status = ctk.CTkTextbox(
-    app,
-    width=680,
-    height=170,
-    fg_color=FRAME,
-    border_width=1,
-    border_color=GREEN,
-    text_color=GREEN,
-    font=("Consolas",15)
-)
-status.pack(padx=30)
 
-status.insert("end","> Scanning...\n")
-status.insert("end","> 152 Files Detected\n")
-status.insert("end","> 18 Categories Created\n")
-status.insert("end","> Moving Files...\n")
-status.insert("end","> Complete.")
-for i in range(50):
-    status.insert("end", f"> Status Message {i+1}\n")
-status.configure(state="disabled")
 
 app.mainloop()
+
+'''
+ui idea
+frame1 -> title 
+frame2 -> browse with a button
+frame3 -> organize button
+frame4 -> textbox_summary
+'''
