@@ -68,7 +68,7 @@ Downloads/
 
 Files are moved into their respective folders while the application displays real-time progress.
 
-<img width="762" height="537" alt="Status Window" src="https://github.com/user-attachments/assets/3d051dcb-ea0f-4f32-ad72-3a2a639cc737" />
+<img width="989" height="505" alt="image" src="https://github.com/user-attachments/assets/1dd8f9e8-abfb-4f8d-9926-2a60e0228032" />
 
 ---
 
@@ -105,6 +105,8 @@ TidyDir/
 <img width="800" height="628" alt="Main Window" src="https://github.com/user-attachments/assets/56d6f747-8cc0-4a59-90be-fe877fc58eef" />
 
 ### Before Organization 
+
+<img width="762" height="537" alt="Status Window" src="https://github.com/user-attachments/assets/3d051dcb-ea0f-4f32-ad72-3a2a639cc737" />
 
 <img width="798" height="855" alt="Summary" src="https://github.com/user-attachments/assets/09a04f79-ed55-4b8b-badd-837d4dc8177c" />
 
